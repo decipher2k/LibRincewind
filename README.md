@@ -1,5 +1,5 @@
 # LibRincewind
-A post-quantum cryptographic, bruteforce protected aporach for encryption of plain text ASCII.<br>
+A post-quantum cryptographic, bruteforce protected aproach for encryption of plain text ASCII.<br>
 <br>
 Synopsis:<br>
 Normal encryption of plain text can theoretically be broken by quantum computers. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data.<br>
