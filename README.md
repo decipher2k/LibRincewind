@@ -23,7 +23,7 @@ Furthermore, the decryption of the key does allways result in binary.<br>
 <br>
 Caveats:<br>
 -The length of the plain text can be guessed, because it equals the length of the decryption key.<br>
--It's still prone to wordlist attacks<br>
+-The algorithm is still prone to wordlist attacks<br>
 <br>
 Hey, isn't that asymetric encryption?<br>
 Not really. The decryption key differes with each encryption attempt. Furthermore, the encryption password is still required for decryption.<br>
