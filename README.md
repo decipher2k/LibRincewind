@@ -4,22 +4,19 @@ A post-quantum cryptographic, bruteforce protected aproach for encryption of pla
 <br>
 Synopsis:<br>
 <br>
-Normal encryption of plain text passwords can theoretically be broken by quantum computers in the future. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data. Furthermore, any algorithm that produces non-ASCII output when using a failure password can be cracked by comparing the output to the ASCII table. <br>(For example using super computers, or when attacking passwords with few characters).<br>
+Normal encryption of plain text passwords can theoretically be broken by quantum computers in the future. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data. Furthermore, any algorithm that produces non-ASCII output when using a failure password can be cracked by comparing the output to the ASCII table. <br><br>
 <br>
 LibRincewind simply combines a symetrical alogrithm with a rotational algorithm.<br>
 <br>
 A key used for decryption is being generated which contains the rotation delta for each character. This key gets encrypted, too.
-Thus, two passwords will be used for encryption (this means that you can also use one password and split it up).<br>
+Thus, two passwords will be used for encryption.<br>
 <br>
 How does it work?<br>
 <br>
 1.) the plain text gets encrypted using a password<br>
 2.) the encrypted result is rotated using a random key for each character until it is valid ascii<br>
-3.) if the result is invalid (0 or invalid due to not being rotatable back or not being ascii), it is rotated more until valid. (and that's why quantum computers won't be able to reverse it. it is impossible to find out how often the result has been rotated)<br>
-4.) the key gets encrypted with a password (it is not crackable asuming the primary algorithm is safe, because it's random binary)<br>
-<br>
-This way, an unknow variable (the number of roatations) is being generated that can't be found in any formula.<br>
-Furthermore, the decryption of the key does allways result in binary.<br>
+3.) if the result is invalid, it is rotated more until valid.<br>
+4.) the key gets encrypted with a password<br>
 <br>
 Caveats:<br>
 -The length of the plain text can be guessed, because it equals the length of the decryption key<br>
