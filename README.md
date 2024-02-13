@@ -2,7 +2,7 @@
 
 A bruteforce protected aproach for encryption of plain text ASCII passwords.<br>
 <br>
-Synopsis:<br>
+What is it about?<br>
 <br>
 Normal encryption of plain text passwords can theoretically be cracked because decryption attempts with a failure password will result in non-ASCII data.<br>
 <br>
