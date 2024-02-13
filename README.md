@@ -29,7 +29,7 @@ Hey, isn't that asymetric encryption?<br>
 Not really. The decryption key differes with each encryption attempt and is part of the encrypted text. Furthermore, the encryption password is still required for decryption.<br>
 <br>
 Hey, that's just layered encryption. Layered encryption only makes it more expensive to crack the algorithm<br>
-It is layered encryption. But the goal is not to make an attack more cost effective or complex, it is to make it logically uncrackable.<br>
+It is layered encryption. But the goal is not to make an attack more cost effective or complex, it is to make the password logically uncrackable.<br>
 <br>
 Usage:<br>
 <br>
