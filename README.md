@@ -22,7 +22,7 @@ This way, an unknow variable (the number of roatations) is being generated that 
 Furthermore, the decryption of the key does allways result in binary.<br>
 <br>
 Caveats:<br>
--The length of the plain text can be guessed, because it equals the length of the decryption key.<br>
+-The length of the plain text can be guessed, because it equals the length of the decryption key<br>
 -The algorithm is still prone to wordlist attacks<br>
 <br>
 Hey, isn't that asymetric encryption?<br>
