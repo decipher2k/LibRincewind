@@ -15,8 +15,7 @@ How does it work?<br>
 <br>
 1.) The plain text gets encrypted using a password<br>
 2.) The encrypted result is rotated using a random key for each character until it is valid ASCII<br>
-3.) If the result is invalid, it is rotated more until valid<br>
-4.) The key gets encrypted with another password<br>
+3.) The key gets encrypted with another password<br>
 <br>
 Caveats:<br>
 -The length of the plain text can be guessed, because it equals the length of the decryption key<br>
