@@ -21,5 +21,6 @@ String enc=rw.encryptString("data","password1","password2");<br>
 String dec=rw.decryptString(enc,"password1","password2");<br>
 <br>
 Creating custom plugins:<br>
-Derive from the interface found in LibRincewindPlugin.<br>
+Derive from the interface found in LibRincewindPlugin.<br><br><br>
+Contact E-Mail: decipher2k20@gmail.com
 
