@@ -8,8 +8,8 @@ Normal encryption of plain text passwords can theoretically be broken by quantum
 <br>
 LibRincewind simply combines a symetrical alogrithm with a rotational algorithm.<br>
 <br>
-A key used for decryption is being generated which contains the rotation delta for each character. This key gets encrypted, too.
-Thus, two passwords will be used for encryption.<br>
+A key used for decryption is being generated which contains the rotation delta for each character. This key gets encrypted with another password.
+<br>
 <br>
 How does it work?<br>
 <br>
