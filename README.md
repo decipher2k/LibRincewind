@@ -18,6 +18,7 @@ How does it work?<br>
 3.) The key gets encrypted with another password<br>
 <br>
 Caveats:<br>
+<br>
 -The length of the plain text can be guessed, because it equals the length of the decryption key<br>
 -The algorithm is still prone to wordlist attacks<br>
 <br>
