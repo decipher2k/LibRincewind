@@ -1,6 +1,6 @@
 # LibRincewind
 
-A post-quantum cryptographic, bruteforce protected aproach for encryption of plain text ASCII passwords.<br>
+A bruteforce protected aproach for encryption of plain text ASCII passwords.<br>
 <br>
 Synopsis:<br>
 <br>
