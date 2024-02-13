@@ -4,7 +4,7 @@ A post-quantum cryptographic, bruteforce protected aproach for encryption of pla
 <br>
 Synopsis:<br>
 <br>
-Normal encryption of plain text passwords can theoretically be broken by quantum computers in the future. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data. Furthermore, any algorithm that produces non-ASCII output when using a failure password can be cracked by comparing the output to the ASCII table. <br><br>
+Normal encryption of plain text passwords can theoretically be broken by quantum computers in the future. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data.<br>
 <br>
 LibRincewind simply combines a symetrical alogrithm with a rotational algorithm.<br>
 <br>
