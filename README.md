@@ -1,10 +1,10 @@
 # LibRincewind
 
-A post-quantum cryptographic, bruteforce protected aproach for encryption of plain text ASCII.<br>
+A post-quantum cryptographic, bruteforce protected aproach for encryption of plain text ASCII passwords.<br>
 <br>
 Synopsis:<br>
 <br>
-Normal encryption of plain text can theoretically be broken by quantum computers in the future. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data. Furthermore, any algorithm that produces non-ASCII output when using a failure password can be cracked by comparing the output to the ASCII table. <br>(For example using super computers, or when attacking passwords with few characters).<br>
+Normal encryption of plain text passwords can theoretically be broken by quantum computers in the future. This is due to the fact that decryption attempts with a failure password will result in non-ASCII data. Furthermore, any algorithm that produces non-ASCII output when using a failure password can be cracked by comparing the output to the ASCII table. <br>(For example using super computers, or when attacking passwords with few characters).<br>
 <br>
 LibRincewind simply combines a symetrical alogrithm with a rotational algorithm.<br>
 <br>
@@ -22,7 +22,8 @@ This way, an unknow variable (the number of roatations) is being generated that 
 Furthermore, the decryption of the key does allways result in binary.<br>
 <br>
 Caveats:<br>
-The length of the plain text can be guessed, because it equals the length of the decryption key.<br>
+-The length of the plain text can be guessed, because it equals the length of the decryption key.<br>
+-It's still prone to wordlist attacks<br>
 <br>
 Hey, isn't that asymetric encryption?<br>
 Not really. The decryption key differes with each encryption attempt. Furthermore, the encryption password is still required for decryption.<br>
