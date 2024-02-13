@@ -16,7 +16,7 @@ Not really. The decryption key differes with each encryption attempt. Furthermor
 <br>
 Usage:<br>
 <br>
-CRincewind rw=new CRincewind(<pluginlibrary>, 512);<br>
+CRincewind rw=new CRincewind("pluginlibrary.dll", 512);<br>
 String enc=rw.encryptString("data","password1","password2");<br>
 String dec=rw.decryptString(enc,"password1","password2");<br>
 <br>
