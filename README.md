@@ -28,4 +28,4 @@ String enc=rw.encryptString("data","password1","password2");<br>
 String dec=rw.decryptString(enc,"password1","password2");<br>
 <br>
 Creating custom plugins:<br>
-Derive from the interface found in LibRincewindPlugin.
+Implement the interface found in LibRincewindPlugin.
