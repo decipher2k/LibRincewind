@@ -18,7 +18,7 @@ How does it work?<br>
 3.) if the result is invalid (0 or invalid due to not being rotatable back or not being ascii), it is rotated more until valid. (and that's why quantum computers won't be able to reverse it. it is impossible to find out how often the result has been rotated)<br>
 4.) the key gets encrypted with a password (it is not crackable concerning the primary algorithm is safe, because it's random binary)<br>
 <br>
-This way, an unknow variable (the number of roatations) is being generated that can't be found in any formula.<br>
+This way, an unknow variable (the number of roatations) is being generated that can't be found in any formula.<br><br>
 Caveats:<br>
 The length of the plain text can be guessed, because it equals the length of the decryption key.<br>
 <br>
