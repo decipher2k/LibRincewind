@@ -8,7 +8,7 @@ Normal encryption of plain text passwords can theoretically be cracked because d
 <br>
 LibRincewind simply combines a symetrical algorithm with a rotational algorithm.<br>
 <br>
-A key used for encryption/decryption is being generated which contains the rotation delta for each character. This key gets encrypted with another password.
+A key used for encryption/decryption is generated which contains the rotation delta for each character. This key gets encrypted with another password.
 <br>
 <br>
 How does it work?<br>
