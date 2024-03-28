@@ -20,7 +20,7 @@ Caveats:<br>
 -The algorithm is still prone to wordlist attacks<br>
 -The Demo is using Blowfish as the base algorithm, which is vulnerable to attacks using quantum computers. Yet the library is independend of the base algorithm, thus Blowfish can easily be replaced with AES or RC6 by creating a custom Plugin.<br>
 -The Demo is using the DotNet Pseudo-RNG. Replace it with a QRNG in real world applications.<br>
--I'm not 100% sure if the password authentication part is really safe. theoretically, it should decrease the complexity to about 1/3 +/- the costs for trying out the first 2/3 compared to sqrt of 3/3 when cracking hashed passwords using grover.<br>
+-I'm not 100% sure if the password authentication part is really safe. theoretically, it should decrease the complexity to about 1/3 +/- the costs for trying out the first 2/3 compared to sqrt of 3/3 when cracking hashed passwords using grover. (i know that's completely wrong, maybe a good mathematician can solve this.)<br>
 <br>
 Usage:<br>
 <br>
