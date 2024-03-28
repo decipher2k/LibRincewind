@@ -20,17 +20,29 @@ Caveats:<br>
 -The algorithm is still prone to wordlist attacks<br>
 -The Demo is using Blowfish as the base algorithm, which is vulnerable to attacks using quantum computers. Yet the library is independend of the base algorithm, thus Blowfish can easily be replaced with AES or RC6 by creating a custom Plugin.<br>
 -The Demo is using the DotNet Pseudo-RNG. Replace it with a QRNG in real world applications.<br>
+-I'm not 100% sure if the password authentication part is 100% safe.<br>
 <br>
 Usage:<br>
 <br>
+Encryption of passwords using a main password (password managers):<br>
 CRincewind rw=new CRincewind("pluginlibrary.dll", 512);<br>
 String enc=rw.encryptString("data","password1","password2");<br>
 String dec=rw.decryptString(enc,"password1","password2");<br>
+<br>
+Password authentication (password login):
+CRincewind rw=new CRincewind("pluginlibrary.dll", 512);<br>
+//store this in the db<br>
+String enc=rw.generatePwAuth(password);<br>
+//test for validity<br>
+bool valid=isPwAuthValid(password,enc);<br>
 <br>
 Creating custom plugins:<br>
 <br>
 Implement the interface found in LibRincewindPlugin.<br>
 <br>
 ToDo:<br>
-IV's for each character
+IV's for each character<br><br>
+Update v1.1:<br>
+-Added demo sourcecode<br>
+-Added password authentication
 
