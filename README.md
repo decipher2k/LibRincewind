@@ -29,7 +29,7 @@ CRincewind rw=new CRincewind("pluginlibrary.dll", 512);<br>
 String enc=rw.encryptString("data","password1","password2");<br>
 String dec=rw.decryptString(enc,"password1","password2");<br>
 <br>
-Password authentication (password login):
+Password authentication (password login):<br>
 CRincewind rw=new CRincewind("pluginlibrary.dll", 512):<br>
 //store this in the db<br>
 String enc=rw.generatePwAuth(password);<br>
