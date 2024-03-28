@@ -30,7 +30,7 @@ String enc=rw.encryptString("data","password1","password2");<br>
 String dec=rw.decryptString(enc,"password1","password2");<br>
 <br>
 Password authentication (password login):
-CRincewind rw=new CRincewind("pluginlibrary.dll", 512);<br>
+CRincewind rw=new CRincewind("pluginlibrary.dll", 512):<br>
 //store this in the db<br>
 String enc=rw.generatePwAuth(password);<br>
 //test for validity<br>
