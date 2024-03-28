@@ -45,4 +45,5 @@ IV's for each character<br><br>
 Update v1.1:<br>
 -Added demo sourcecode<br>
 -Added password authentication
-
+<br><br>
+Contact E-Mail: decipher2k20@gmail.com
