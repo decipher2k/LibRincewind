@@ -18,7 +18,7 @@ Caveats:<br>
 <br>
 -The length of the plain text can be guessed, because it equals the length of the encryption/decryption key<br>
 -The algorithm is still prone to wordlist attacks<br>
--The Demo is using Blowfish as the base algorithm, which is vulnerable to attacks using quantum computers. Yet the library is independend of the base algorithm, thus Blowfish can easily be replaced with AES using a Plugin.<br>
+-The Demo is using Blowfish as the base algorithm, which is vulnerable to attacks using quantum computers. Yet the library is independend of the base algorithm, thus Blowfish can easily be replaced with AES or RC6 by creating a custom Plugin.<br>
 -The Demo is using the DotNet Pseudo-RNG. Replace it with a QRNG in real world applications.<br>
 <br>
 Usage:<br>
