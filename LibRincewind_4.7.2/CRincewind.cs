@@ -14,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace LibRincewind_4._7._2
@@ -43,11 +44,37 @@ namespace LibRincewind_4._7._2
         {
           bytes[index] = this.rotateByLeft(bytes[index], (int) randomKey[index]);
         }
-        while (bytes[index] < (byte) 36 || bytes[index] > (byte) 126);
+        while (bytes[index] < (byte) 36 || bytes[index] > (byte) 126 );
       }
-      byte[] inArray1 = this.plugin.encrypt(bytes, password1, this.IV);
-      byte[] inArray2 = this.plugin.encrypt(randomKey, password2, this.IV);
-      return new CCryptData()
+
+            byte[] inArray1;
+            byte[] dec;
+            bool err = false;
+            do
+            {
+                inArray1 = this.plugin.encrypt(bytes, password1, this.IV);
+                dec = this.plugin.decrypt(inArray1, password1, IV).Take(bytes.Length).ToArray();
+                err = false;
+                for (int i = 0; i < dec.Length; ++i)
+                   if (dec[i] != bytes[i])
+                       err = true;
+            } while (err);
+
+
+
+      byte[] inArray2;
+            byte[] dec1;
+            do
+            {
+                inArray2 = this.plugin.encrypt(randomKey, password2, this.IV);
+                dec1 = this.plugin.decrypt(inArray2, password2, IV).Take(randomKey.Length).ToArray();
+                err = false;
+                //for (int i = 0; i < dec1.Length; ++i)
+                  //  if (dec1[i] != randomKey[i])
+                  //      err = true;
+            } while (err);
+
+            return new CCryptData()
       {
         CryptedData = Convert.ToBase64String(inArray1),
         Key = Convert.ToBase64String(inArray2),
@@ -80,7 +107,7 @@ namespace LibRincewind_4._7._2
           numArray3[index] = this.rotateByRight(numArray3[index], (int) numArray2[index]);
           ++num;
         }
-        while ((numArray3[index] < (byte) 36 || numArray3[index] > (byte) 126) && numArray3[index] > (byte) 0);
+        while ((numArray3[index] < (byte) 36 || numArray3[index] > (byte) 126)&& numArray3[index]>0 );
         chArray[index] = (char) numArray3[index];
       }
       return new string(chArray);
@@ -90,6 +117,47 @@ namespace LibRincewind_4._7._2
     {
       return this.decryptCCD((CCryptData) new BinaryFormatter().Deserialize((Stream) new MemoryStream(Convert.FromBase64String(cryptDataB64))), password1, password2);
     }
+
+    public string generatePwAuth(string password)
+    {
+        if (password.Length < 12)
+            throw new Exception("Weak Password");
+
+        String lastByte = "";
+        bool isEven = (password.Length % 2 == 0);
+        if (!isEven)
+        {
+            lastByte= password[password.Length - 1].ToString();
+            password = password.Substring(0, password.Length - 2);
+        }
+
+        String password1 = password.Substring(0, password.Length / 3);
+        String password2= password.Substring(password.Length / 3, password.Length / 3);
+        String testPassword = password.Substring((password.Length / 3) * 2);
+        testPassword = testPassword + lastByte;
+        
+        return encryptString(testPassword, password1, password2);
+    }
+
+    public bool isPwAuthValid(string password, string encryptedString)
+    {
+       String lastByte = "";
+       bool isEven = (password.Length % 2 == 0);
+       if (!isEven)
+       {
+            lastByte = password[password.Length - 1].ToString();
+            password = password.Substring(0, password.Length - 2);
+       }
+
+       String password1 = password.Substring(0, password.Length / 3);
+       String password2 = password.Substring(password.Length / 3, password.Length / 3);
+       String testPassword = password.Substring((password.Length / 3) * 2);
+       testPassword = testPassword + lastByte;
+
+       return decryptString(encryptedString, password1, password2)==testPassword;
+    }
+
+
 
     private byte[] generateRandomKey(string input)
     {
