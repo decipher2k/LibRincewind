@@ -6,7 +6,7 @@ What is it about?<br>
 <br>
 Normal encryption of plain text passwords can theoretically be cracked because decryption attempts with a failure password will result in non-ASCII data.<br>
 <br>
-LibRincewind simply combines a symetrical algorithm with a rotational algorithm.<br>
+LibRincewind simply combines a symetrical algorithm with a rotational algorithm so that false tries can't be distinguished from valid ones.<br>
 <br>
 How does it work?<br>
 <br>
