@@ -1,6 +1,6 @@
 # LibRincewind
 
-A bruteforce protected aproach for encryption of plain text ASCII passwords.<br>
+A bruteforce protected aproach for encryption using plain text ASCII passwords.<br>
 <br>
 What is it about?<br>
 <br>
